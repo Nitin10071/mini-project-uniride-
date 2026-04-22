@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: white;
+  transition: 0.4s;
+}
+
+.container {
+  width: 90%;
+  max-width: 850px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.08);
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 2.4rem;
+}
+
+.header p {
+  opacity: 0.8;
+  margin-top: 5px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+label {
+  font-weight: bold;
+  opacity: 0.9;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: dodgerblue;
+  color: white;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+button.danger {
+  background: crimson;
+}
+
+.menu {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.menu button {
+  flex: 1;
+}
+
+.tabBtn.active {
+  background: limegreen;
+  color: black;
+  font-weight: bold;
+}
+
+#welcomeName {
+  color: lime;
+}
+
+#ridesList, #bookingList, #matchResults {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rideCard {
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  animation: fadeIn 0.4s ease;
+}
+
+.rideCard h3 {
+  margin-bottom: 5px;
+}
+
+.rideCard small {
+  opacity: 0.8;
+}
+
+.rideCard button {
+  margin-top: 10px;
+  background: orange;
+  color: black;
+  font-weight: bold;
+}
+
+.ratingBox {
+  margin-top: 10px;
+}
+
+.ratingBox select {
+  margin-top: 5px;
+}
+
+/* Toggle Button */
+#modeToggle {
+  margin-top: 15px;
+  width: auto;
+  padding: 8px 15px;
+  background: white;
+  color: black;
+  font-weight: bold;
+}
+
+/* Light Mode */
+body.light-mode {
+  background: #f2f2f2;
+  color: black;
+}
+
+body.light-mode .header,
+body.light-mode .card {
+  background: rgba(0,0,0,0.08);
+}
+
+body.light-mode input,
+body.light-mode select {
+  background: white;
+  color: black;
+}
+
+body.light-mode .rideCard {
+  background: rgba(0,0,0,0.12);
+}
+
+body.light-mode #modeToggle {
+  background: black;
+  color: white;
+}
+
+footer {
+  text-align: center;
+  opacity: 0.6;
+  margin-top: 20px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

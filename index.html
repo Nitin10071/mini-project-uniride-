@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniRide - Student Cab App</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="header">
+      <h1>UniRide 🚕</h1>
+      <p>Student Ride Sharing App (Only for Chandigarh University)</p>
+
+      <button id="modeToggle">🌙 Dark Mode</button>
+    </header>
+
+    <!-- LOGIN SECTION -->
+    <section class="card" id="loginSection">
+      <h2>Student Login</h2>
+      <input type="text" id="studentName" placeholder="Enter your Name">
+      <input type="text" id="studentID" placeholder="Enter your Student ID">
+      <button id="loginBtn">Login</button>
+    </section>
+
+    <!-- MAIN APP -->
+    <section id="mainApp" style="display:none;">
+
+      <div class="welcomeBox card">
+        <h2>Welcome, <span id="welcomeName"></span> 👋</h2>
+        <p>Your Student ID: <span id="welcomeID"></span></p>
+        <button id="logoutBtn" class="danger">Logout</button>
+      </div>
+
+      <!-- MENU -->
+      <div class="menu card">
+        <button class="tabBtn active" data-tab="requestRideTab">Request Ride</button>
+        <button class="tabBtn" data-tab="offerRideTab">Offer Ride</button>
+        <button class="tabBtn" data-tab="availableRidesTab">Available Rides</button>
+        <button class="tabBtn" data-tab="bookingHistoryTab">My Bookings</button>
+      </div>
+
+      <!-- REQUEST RIDE TAB -->
+      <section class="card tabContent" id="requestRideTab">
+        <h2>Request a Ride 🙋</h2>
+
+        <label>Pickup Location</label>
+        <select id="pickupLocation">
+          <option value="Sector 17">Sector 17</option>
+          <option value="Sector 34">Sector 34</option>
+          <option value="Mohali Phase 7">Mohali Phase 7</option>
+          <option value="Zirakpur">Zirakpur</option>
+          <option value="Kharar">Kharar</option>
+        </select>
+
+        <label>Destination</label>
+        <input type="text" value="Chandigarh University" disabled>
+
+        <label>Seats Needed</label>
+        <input type="number" id="seatsNeeded" min="1" max="4" value="1">
+
+        <button id="findRideBtn">Find Ride</button>
+
+        <div id="matchResults"></div>
+      </section>
+
+      <!-- OFFER RIDE TAB -->
+      <section class="card tabContent" id="offerRideTab" style="display:none;">
+        <h2>Offer a Ride 🚗</h2>
+
+        <label>Vehicle Type</label>
+        <select id="vehicleType">
+          <option value="Bike">Bike 🏍️</option>
+          <option value="Car">Car 🚗</option>
+        </select>
+
+        <label>Start Location</label>
+        <select id="startLocation">
+          <option value="Sector 17">Sector 17</option>
+          <option value="Sector 34">Sector 34</option>
+          <option value="Mohali Phase 7">Mohali Phase 7</option>
+          <option value="Zirakpur">Zirakpur</option>
+          <option value="Kharar">Kharar</option>
+        </select>
+
+        <label>Available Seats</label>
+        <input type="number" id="availableSeats" min="1" max="4" value="1">
+
+        <label>Departure Time</label>
+        <input type="time" id="departureTime">
+
+        <label>Price per Seat (₹)</label>
+        <input type="number" id="pricePerSeat" min="10" value="50">
+
+        <button id="postRideBtn">Post Ride</button>
+
+        <div id="postMessage"></div>
+      </section>
+
+      <!-- AVAILABLE RIDES TAB -->
+      <section class="card tabContent" id="availableRidesTab" style="display:none;">
+        <h2>Available Student Rides 🚕</h2>
+        <div id="ridesList"></div>
+      </section>
+
+      <!-- BOOKING HISTORY TAB -->
+      <section class="card tabContent" id="bookingHistoryTab" style="display:none;">
+        <h2>My Bookings 📜</h2>
+        <div id="bookingList"></div>
+      </section>
+
+    </section>
+
+    <footer>
+      <p>Made by Nitin Kumar | Chandigarh University</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
