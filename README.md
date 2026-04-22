@@ -52,5 +52,5 @@ built for a university student environment and prevents misuse for normal city t
 ---
 
 ## Developer
-Ansh Rathi  
+Nitin Kumar
 Chandigarh University
